@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>SPA</title>
+    <style>
+      body{font-family:system-ui,Segoe UI,Roboto,Arial;margin:0}
+      header{padding:1rem;background:#0b74da;color:#fff}
+      nav a{color:#fff;margin-right:1rem}
+      main{padding:2rem}
+    </style>
+  </head>
+  <body>
+    <header>
+      <a href="/"><h1>Single Page Application</h1></a>
+      <nav>
+        <a href="?p=main">Home</a>
+        <a href="?p=profile">Profile</a>
+      </nav>
+    </header>
+
+    <!-- Layout container -->
+    <div id="app-root">
+      <!-- index.js will render layout and inject page content into #app-content -->
+      <main id="app-content"></main>
+    </div>
+
+    <script src="index.js"></script>
+  </body>
+</html>
