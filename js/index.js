@@ -1,5 +1,9 @@
-// Simple SPA router and view injector
+import {
+  initLogin
+} from './login.js';
+
 async function loadPage(pageName, hash = '') {
+
   try {
     if (!pageName) pageName = 'main';
     const fileUrl = `js/pages/${pageName}.html`;
@@ -7,6 +11,10 @@ async function loadPage(pageName, hash = '') {
     if (!res.ok) throw new Error('Not found');
     const html = await res.text();
     document.getElementById('app-content').innerHTML = html;
+
+    if (pageName === "login" && typeof initLogin === "function") {
+      initLogin();
+    }
     if (hash) {
       const target = document.getElementById(hash.substring(1));
       if (target) target.scrollIntoView({ behavior: 'smooth' });
@@ -43,7 +51,5 @@ const init = () => {
   loadPage(url.searchParams.get('p') || 'main', url.hash);
 };
 
-
-init();
 
 init();
