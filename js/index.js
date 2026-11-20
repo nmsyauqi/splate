@@ -2,7 +2,7 @@
 async function loadPage(pageName, hash = '') {
   try {
     if (!pageName) pageName = 'main';
-    const fileUrl = `pages/${pageName}.html`;
+    const fileUrl = `js/pages/${pageName}.html`;
     const res = await fetch(fileUrl);
     if (!res.ok) throw new Error('Not found');
     const html = await res.text();
